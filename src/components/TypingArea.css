@@ -1,0 +1,274 @@
+.typing-area-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto 3rem;
+}
+
+.blur-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+  background-color: rgba(247, 246, 243, 0.8);
+  backdrop-filter: blur(2px);
+  border-radius: var(--radius-xl);
+  cursor: pointer;
+  animation: fadeIn 0.15s ease-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.confirmation-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(1px);
+  animation: fadeIn 0.15s ease-out;
+}
+
+.confirmation-modal {
+  background: var(--surface-white);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  max-width: 400px;
+  box-shadow: var(--shadow-md);
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.confirmation-modal h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0 0 0.5rem 0;
+}
+
+.confirmation-modal p {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  margin: 0 0 1.5rem 0;
+  line-height: 1.5;
+}
+
+.confirmation-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+}
+
+.btn-cancel {
+  padding: 0.6rem 1.5rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-light);
+  background: transparent;
+  color: var(--text-secondary);
+  font-weight: 500;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.btn-cancel:hover {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+}
+
+.btn-confirm {
+  padding: 0.6rem 1.5rem;
+  border-radius: var(--radius-md);
+  border: none;
+  background: var(--text-primary);
+  color: var(--surface-white);
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.btn-confirm:hover {
+  background: var(--text-secondary);
+}
+
+.btn-confirm:active {
+  transform: scale(0.98);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.blur-message {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+  background: var(--surface-white);
+  padding: 1rem 1.5rem;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-light);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 0.9rem;
+}
+
+.typing-area-container {
+  padding: 2rem 1.5rem 3rem 1.5rem;
+  background: var(--surface-white);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-xs);
+  border: 1px solid var(--border-light);
+  position: relative;
+  transition: var(--transition-smooth);
+}
+
+.typing-area-container:hover {
+  box-shadow: var(--shadow-sm);
+}
+
+.typing-area-container.blurred {
+  filter: blur(3px);
+  opacity: 0.6;
+}
+
+.mini-stats {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  font-weight: 500;
+  opacity: 0.85;
+  animation: fadeIn 0.2s ease;
+  letter-spacing: 0.2px;
+  white-space: nowrap;
+  height: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.text-display {
+  font-size: 1.3rem;
+  line-height: 1.8;
+  color: var(--text-primary);
+  font-weight: 400;
+  text-align: left;
+  user-select: none;
+  min-height: 180px;
+  position: relative;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', monospace;
+  letter-spacing: 0.4px;
+}
+
+.char {
+  position: relative;
+  transition: color 0.05s ease, background-color 0.05s ease;
+  cursor: text;
+  color: var(--text-muted);
+}
+
+.char.correct {
+  color: var(--text-primary);
+  border-bottom: 2px solid var(--border-subtle);
+}
+
+.char.incorrect {
+  color: #D32F2F;
+  background-color: rgba(211, 47, 47, 0.08);
+  border-radius: 2px;
+  padding: 0 1px;
+}
+
+/* Smooth cursor */
+.char.active::before {
+  content: '';
+  position: absolute;
+  left: -0.5px;
+  bottom: -2px;
+  width: 1.5px;
+  height: 1.5em;
+  background: var(--text-primary);
+  animation: smoothBlink 1.2s infinite;
+  border-radius: 1px;
+}
+
+@keyframes smoothBlink {
+  0%, 49%, 100% { opacity: 1; }
+  50%, 99% { opacity: 0.2; }
+}
+
+.restart-container {
+  margin-top: 2.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.finish-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #f97316;
+  color: var(--surface-white);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  transition: var(--transition-smooth);
+  box-shadow: var(--shadow-xs);
+}
+
+.finish-btn:hover {
+  background: #ea580c;
+  box-shadow: var(--shadow-sm);
+}
+
+.finish-btn:active {
+  transform: scale(0.95);
+}
+
+.restart-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--text-primary);
+  color: var(--surface-white);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  transition: var(--transition-smooth);
+  box-shadow: var(--shadow-xs);
+}
+
+.restart-btn:hover {
+  background: var(--text-secondary);
+  box-shadow: var(--shadow-sm);
+}
+
+.restart-btn:active {
+  transform: scale(0.95);
+}

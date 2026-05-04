@@ -1,0 +1,71 @@
+.test-options-container {
+  margin-bottom: 2rem;
+  width: 100%;
+}
+
+.options-group {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  background: var(--surface-white);
+  padding: 0.6rem 1rem;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-xs);
+  border: 1px solid var(--border-light);
+  row-gap: 0.5rem;
+}
+
+.pill-selector {
+  display: flex;
+  gap: 0.25rem;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+.divider {
+  width: 1px;
+  height: 18px;
+  background: var(--border-subtle);
+  border-radius: 1px;
+  flex-shrink: 0;
+  margin: 0 0.15rem;
+}
+
+.pill-btn {
+  padding: 0.5rem 0.9rem;
+  border-radius: var(--radius-md);
+  color: var(--text-secondary);
+  font-weight: 500;
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  background: transparent;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: var(--transition-fast);
+  text-transform: uppercase;
+  letter-spacing: 0.2px;
+}
+
+.pill-btn:hover {
+  color: var(--text-primary);
+  background: var(--bg-secondary);
+}
+
+.pill-btn.active {
+  color: var(--surface-white);
+  background: var(--text-primary);
+  border-color: var(--text-primary);
+  font-weight: 600;
+}
+
+.icon-pill {
+  padding: 0.5rem 0.75rem;
+}
+
+.icon-only {
+  padding: 0.5rem;
+}

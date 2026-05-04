@@ -1,0 +1,87 @@
+:root {
+  /* Calm Productivity Color System */
+  --bg-primary: #F7F6F3;
+  --bg-secondary: #F1F1EF;
+  --bg-hover: #EBEBE9;
+  --surface-white: #FFFFFF;
+  
+  --text-primary: #2F3437;
+  --text-secondary: #6B6F76;
+  --text-muted: #9B9A97;
+  
+  --border-light: #E9E9E7;
+  --border-subtle: #DCDCDC;
+  
+  --accent-primary: #2F3437;
+  --accent-secondary: #6B6F76;
+  
+  /* Minimal shadows */
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.07);
+  
+  /* Spacing & Borders */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 20px;
+  
+  /* Transitions */
+  --transition-fast: all 0.15s ease;
+  --transition-smooth: all 0.2s ease;
+  --transition-slow: all 0.3s ease;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Inter', 'Poppins', sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: 0.3px;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 90%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+/* Base utility classes */
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.text-center {
+  text-align: center;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+  transition: var(--transition-smooth);
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}

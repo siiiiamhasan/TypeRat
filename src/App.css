@@ -1,0 +1,23 @@
+.command-hint {
+  text-align: center;
+  margin-top: 2.5rem;
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  opacity: 0.8;
+  font-weight: 400;
+  letter-spacing: 0.2px;
+}
+
+kbd {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-light);
+  border-radius: 4px;
+  padding: 0.15rem 0.4rem;
+  font-size: 0.75rem;
+  font-family: -apple-system, BlinkMacSystemFont, 'Courier New', monospace;
+  font-weight: 500;
+  box-shadow: var(--shadow-xs);
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
